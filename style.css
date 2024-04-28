@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: red;
+    background-image: url("./imgs/sky.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+   
+}
+.road{
+    height: 200px;
+    width: 500%;
+    background-color: black;
+    background-repeat: repeat-x;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    background-image: url("./imgs/road.jpg");
+    animation-name:road;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes road {
+    100%{
+        transform: translateX(-3000px);
+    }
+}
+.city{
+    animation-name: city;
+    height: 300px;
+    width: 500%;
+    background-image: url("./imgs/city.png");
+    background-size: contain;
+   background-position:center ;
+   position: absolute;
+   bottom: 200px;
+   animation: city 6s 2s linear infinite;
+}
+@keyframes city {
+    100%{
+        transform: translateX(-2000px);
+    }
+    
+}
+.car{
+    width: 400px;
+    height: 300px;
+background-image: url("./imgs/car.png");
+background-repeat: no-repeat;
+background-size: contain;
+position: absolute;
+left: calc(50% - 200px);
+bottom: -50px;
+z-index: 1;
+animation: car 2s 2s ease-in-out infinite alternate; 
+
+transition-delay: 3s;
+}
+@keyframes car {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(15px);
+    }
+}
+
+
+.car::before{
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 36px;
+    width: 70px;
+    height: 70px;
+    background-image: url("./imgs/wheel.png");
+    background-size: cover;
+    background-position: center;
+    animation: 1s balon linear infinite; 
+         animation-delay: 2s;
+}
+
+.car::after{
+    content: "";
+    position: absolute;
+    top: 90px;
+    right: 48px;
+    width: 70px;
+    height: 70px;
+    background-image: url("./imgs/wheel.png");
+    background-size: contain;
+    background-position: center;
+    animation: 1s balon linear infinite;
+    animation-delay: 2s;
+     
+}
+
+@keyframes balon {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.box{
+    animation-delay: 3s;
+}
